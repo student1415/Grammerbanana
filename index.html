@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO META TAGS -->
+<title>Free Grammar Checker & Fixer — Instant AI Correction | GrammarBanana</title>
+<meta name="description" content="Fix grammar, spelling and punctuation errors instantly with AI. Free online grammar checker — no signup, no limits. Better than Grammarly. Used by 100,000+ writers.">
+<meta name="keywords" content="grammar checker, grammar fixer, free grammar check, fix grammar online, grammar corrector, spell checker, punctuation checker, English grammar tool, AI grammar checker, grammar check free">
+<meta name="robots" content="index, follow">
+<meta name="author" content="GrammarBanana">
+<link rel="canonical" href="https://toolbanana.vercel.app/grammar">
+
+<!-- OPEN GRAPH (Social sharing) -->
+<meta property="og:title" content="Free AI Grammar Checker — Fix Errors Instantly">
+<meta property="og:description" content="Paste any text and get instant grammar, spelling & style corrections. 100% free, no signup needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://toolbanana.vercel.app/grammar">
+<meta property="og:image" content="https://toolbanana.vercel.app/og-grammar.png">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Grammar Checker — Instant Corrections">
+<meta name="twitter:description" content="Fix grammar errors instantly. Free, no login, unlimited use.">
+
+<!-- SCHEMA MARKUP (SEO Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GrammarBanana — Free Grammar Checker",
+  "description": "Free AI-powered grammar checker and fixer. Instantly correct grammar, spelling, punctuation and style errors.",
+  "url": "https://toolbanana.vercel.app/grammar",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Grammar correction",
+    "Spelling checker",
+    "Punctuation fixer",
+    "Style improvement",
+    "Tone selector",
+    "Readability score"
+  ]
+}
+</script>
+
+<!-- FAQ SCHEMA (Gets featured snippets on Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is GrammarBanana free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, GrammarBanana is 100% free with no signup required. Check unlimited text anytime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the AI grammar checker work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GrammarBanana uses Claude AI to analyze your text and identify grammar, spelling, punctuation and style errors. It provides corrections and explanations instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GrammarBanana better than Grammarly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GrammarBanana offers similar AI-powered corrections completely free with no word limits, while Grammarly charges $12/month for premium features."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Google AdSense — Replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf9f6;
+  --surface:#ffffff;
+  --surface2:#f4f2ed;
+  --surface3:#ede9e1;
+  --border:#e2ddd4;
+  --border2:#ccc7bc;
+  --ink:#1c1917;
+  --ink2:#44403c;
+  --muted:#78716c;
+  --muted2:#a8a29e;
+  --accent:#16a34a;
+  --accent-bg:#f0fdf4;
+  --accent-border:#86efac;
+  --error:#dc2626;
+  --error-bg:#fef2f2;
+  --error-border:#fca5a5;
+  --warning:#d97706;
+  --warning-bg:#fffbeb;
+  --warning-border:#fcd34d;
+  --gold:#b45309;
+  --gold-bg:#fef3c7;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 12px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg:0 12px 40px rgba(0,0,0,0.1),0 2px 8px rgba(0,0,0,0.06);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* ===== NAVBAR ===== */
+nav{position:sticky;top:0;z-index:200;background:rgba(250,249,246,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 24px;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto}
+.nav-logo-mark{width:30px;height:30px;background:var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.nav-logo-text{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink)}
+.nav-logo-text span{color:var(--accent)}
+.nav-badge{padding:4px 12px;background:var(--accent-bg);border:1px solid var(--accent-border);border-radius:20px;font-size:11px;font-weight:600;color:var(--accent)}
+.nav-sponsor-slot{padding:5px 14px;background:var(--gold-bg);border:1px dashed var(--warning-border);border-radius:8px;font-size:11px;font-weight:600;color:var(--gold);cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.nav-sponsor-slot:hover{background:#fde68a;border-style:solid}
+
+/* ===== HERO ===== */
+.hero{max-width:780px;margin:0 auto;padding:52px 24px 36px;text-align:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:500;color:var(--muted);margin-bottom:20px}
+.hero-eyebrow-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+h1{font-family:'Fraunces',serif;font-size:clamp(36px,6vw,60px);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--ink);margin-bottom:16px}
+h1 .green{color:var(--accent)}
+h1 .italic{font-style:italic;font-weight:400}
+.hero-desc{font-size:17px;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 28px}
+.hero-proof{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap}
+.proof-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500}
+.proof-icon{font-size:14px}
+
+/* ===== AD SLOT — TOP BANNER ===== */
+.ad-banner{max-width:780px;margin:0 auto 8px;padding:0 24px}
+.ad-slot{background:var(--surface);border:1px dashed var(--border2);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted2);font-size:12px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase}
+.ad-slot.banner{height:90px}
+.ad-slot.square{height:250px;width:300px}
+.ad-slot.leaderboard{height:90px;width:100%}
+.ad-slot-label{display:flex;flex-direction:column;align-items:center;gap:4px}
+.ad-slot-label span{font-size:10px;color:var(--muted2)}
+/* To activate AdSense: replace .ad-slot divs with <ins class="adsbygoogle"> tags */
+
+/* ===== SPONSOR BANNER ===== */
+.sponsor-bar{max-width:780px;margin:0 auto 20px;padding:0 24px}
+.sponsor-inner{background:linear-gradient(135deg,#1c1917 0%,#292524 100%);border-radius:14px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sponsor-left{display:flex;align-items:center;gap:12px}
+.sponsor-tag{font-size:10px;font-weight:700;color:#a8a29e;text-transform:uppercase;letter-spacing:1px}
+.sponsor-name{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#fff}
+.sponsor-desc{font-size:13px;color:#a8a29e;margin-top:2px}
+.sponsor-cta{padding:9px 20px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:opacity 0.2s}
+.sponsor-cta:hover{opacity:0.9}
+.sponsor-edit-hint{font-size:11px;color:#57534e;margin-top:4px;text-align:right}
+
+/* ===== MAIN TOOL ===== */
+.tool-wrap{max-width:780px;margin:0 auto;padding:0 24px 16px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)}
+
+/* TOOL HEADER */
+.tool-header{padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.tool-header-left{display:flex;align-items:center;gap:12px}
+.tool-icon{width:40px;height:40px;background:var(--accent-bg);border:1px solid var(--accent-border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.tool-title-block{}
+.tool-name{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink)}
+.tool-subtitle{font-size:12px;color:var(--muted);margin-top:1px}
+.tone-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tone-label{font-size:12px;font-weight:600;color:var(--muted);margin-right:2px}
+.tone-chip{padding:6px 14px;background:var(--surface2);border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.tone-chip:hover{border-color:var(--border2);color:var(--ink2)}
+.tone-chip.sel{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* TEXT AREAS */
+.editors{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);margin-top:16px}
+.editor-pane{padding:0}
+.editor-pane:first-child{border-right:1px solid var(--border)}
+.editor-label{padding:10px 18px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.editor-label-text{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px}
+.editor-actions{display:flex;gap:6px}
+.editor-action{padding:3px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:11px;font-weight:500;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.editor-action:hover{color:var(--ink);border-color:var(--border2)}
+.txta{width:100%;padding:18px;background:var(--surface);border:none;color:var(--ink);font-size:15px;font-family:'DM Sans',sans-serif;outline:none;resize:none;min-height:220px;line-height:1.7}
+.txta::placeholder{color:var(--muted2)}
+.txta.output{background:var(--accent-bg);color:var(--ink);cursor:default}
+.txta.output.has-content{background:var(--accent-bg)}
+
+/* STATS BAR */
+.stats-bar{padding:10px 18px;background:var(--surface2);border-top:1px solid var(--border);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.stat-item{font-size:12px;color:var(--muted)}
+.stat-item strong{color:var(--ink);font-weight:600}
+.stat-item.errors strong{color:var(--error)}
+.stat-item.score strong{color:var(--accent)}
+
+/* ERROR HIGHLIGHTS */
+.errors-panel{border-top:1px solid var(--border);padding:16px 18px;background:var(--surface);display:none}
+.errors-panel.show{display:block}
+.errors-title{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:12px}
+.error-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;margin-bottom:8px;border:1px solid}
+.error-item:last-child{margin-bottom:0}
+.error-item.grammar{background:var(--error-bg);border-color:var(--error-border)}
+.error-item.spelling{background:var(--warning-bg);border-color:var(--warning-border)}
+.error-item.style{background:var(--accent-bg);border-color:var(--accent-border)}
+.error-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.grammar .error-dot{background:var(--error)}
+.spelling .error-dot{background:var(--warning)}
+.style .error-dot{background:var(--accent)}
+.error-text{flex:1}
+.error-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.grammar .error-label{color:var(--error)}
+.spelling .error-label{color:var(--warning)}
+.style .error-label{color:var(--accent)}
+.error-desc{font-size:13px;color:var(--ink2);line-height:1.5}
+
+/* RUN BUTTON */
+.run-section{padding:16px 18px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.run-btn{flex:1;min-width:200px;padding:14px 24px;background:var(--ink);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Fraunces',serif;letter-spacing:0.2px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:10px}
+.run-btn:hover{background:var(--ink2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+.run-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+.run-btn.go{background:var(--accent)}
+.run-btn.go:hover{background:#15803d}
+.copy-btn{padding:14px 20px;background:var(--surface2);border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-weight:600;color:var(--ink2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;display:flex;align-items:center;gap:7px}
+.copy-btn:hover{border-color:var(--border2);background:var(--surface3)}
+
+/* SCORE CARD */
+.score-section{padding:16px 18px;border-top:1px solid var(--border);display:none;background:var(--surface2)}
+.score-section.show{display:block}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.score-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.score-num{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--ink)}
+.score-num.good{color:var(--accent)}
+.score-num.warn{color:var(--warning)}
+.score-num.bad{color:var(--error)}
+.score-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+
+/* STATUS */
+.status{padding:10px 14px;border-radius:8px;font-size:13px;font-weight:500;margin:0 18px 12px;display:none;align-items:center;gap:8px}
+.status.show{display:flex}
+.status.loading{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.status.error{background:var(--error-bg);color:var(--error);border:1px solid var(--error-border)}
+.spin{width:14px;height:14px;border:2px solid rgba(0,0,0,0.1);border-top-color:var(--ink);border-radius:50%;animation:spin 0.6s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ===== AD SLOT — MID PAGE ===== */
+.ad-mid{max-width:780px;margin:16px auto;padding:0 24px}
+
+/* ===== FEATURES SECTION ===== */
+.features{max-width:780px;margin:32px auto 0;padding:0 24px}
+.features-title{font-family:'Fraunces',serif;font-size:26px;font-weight:700;letter-spacing:-0.5px;color:var(--ink);margin-bottom:6px}
+.features-sub{font-size:14px;color:var(--muted);margin-bottom:20px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.feat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;transition:box-shadow 0.2s}
+.feat:hover{box-shadow:var(--shadow-md)}
+.feat-icon{font-size:22px;margin-bottom:10px}
+.feat-name{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ===== VS SECTION (SEO) ===== */
+.vs-section{max-width:780px;margin:36px auto 0;padding:0 24px}
+.vs-title{font-family:'Fraunces',serif;font-size:26px;font-weight:700;letter-spacing:-0.5px;color:var(--ink);margin-bottom:16px}
+.vs-table{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.vs-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--border)}
+.vs-row:last-child{border-bottom:none}
+.vs-row.header{background:var(--surface2)}
+.vs-cell{padding:14px 16px;font-size:13px;font-weight:500;color:var(--ink2)}
+.vs-cell.header-cell{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px}
+.vs-cell.us{background:var(--accent-bg);color:var(--accent);font-weight:700}
+.check{color:var(--accent);font-weight:700}
+.cross{color:var(--error)}
+
+/* ===== FAQ SECTION (SEO) ===== */
+.faq-section{max-width:780px;margin:36px auto 0;padding:0 24px}
+.faq-title{font-family:'Fraunces',serif;font-size:26px;font-weight:700;letter-spacing:-0.5px;color:var(--ink);margin-bottom:16px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.faq-q:hover{background:var(--surface2)}
+.faq-arrow{font-size:12px;color:var(--muted);transition:transform 0.2s}
+.faq-a{padding:0 20px;font-size:14px;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s}
+.faq-item.open .faq-a{max-height:200px;padding:0 20px 16px}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+
+/* ===== AD SLOT — SIDEBAR STYLE ===== */
+.ad-bottom{max-width:780px;margin:24px auto;padding:0 24px}
+
+/* ===== SECOND SPONSOR SLOT ===== */
+.sponsor2{max-width:780px;margin:24px auto;padding:0 24px}
+.sponsor2-inner{background:var(--surface);border:1.5px dashed var(--border2);border-radius:16px;padding:24px;text-align:center}
+.sponsor2-tag{font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.sponsor2-title{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.sponsor2-desc{font-size:13px;color:var(--muted);margin-bottom:16px}
+.sponsor2-btn{padding:10px 24px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);margin-top:48px;padding:40px 24px 24px}
+.footer-inner{max-width:780px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-brand{}
+.footer-logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+.footer-logo span{color:var(--accent)}
+.footer-tagline{font-size:13px;color:#78716c;line-height:1.6}
+.footer-col-title{font-size:12px;font-weight:700;color:#a8a29e;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:12px}
+.footer-link{display:block;font-size:13px;color:#78716c;text-decoration:none;margin-bottom:8px;transition:color 0.15s}
+.footer-link:hover{color:#fff}
+.footer-bottom{border-top:1px solid #292524;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:#57534e}
+.footer-badges{display:flex;gap:8px}
+.footer-badge{padding:4px 10px;background:#292524;border-radius:6px;font-size:11px;font-weight:600;color:#78716c}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .editors{grid-template-columns:1fr}
+  .editor-pane:first-child{border-right:none;border-bottom:1px solid var(--border)}
+  .hero{padding:36px 16px 24px}
+  .tool-wrap,.ad-banner,.sponsor-bar,.features,.vs-section,.faq-section,.ad-mid,.ad-bottom,.sponsor2{padding-left:16px;padding-right:16px}
+  nav{padding:0 16px}
+  h1{letter-spacing:-1px}
+  .footer-top{grid-template-columns:1fr}
+  .vs-row{grid-template-columns:1.5fr 1fr 1fr}
+  .vs-row .vs-cell:nth-child(4){display:none}
+  .vs-row .header-cell:nth-child(4){display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="nav-logo-mark">🍌</div>
+    <div class="nav-logo-text">Grammar<span>Banana</span></div>
+  </a>
+  <div class="nav-badge">✓ Free Forever</div>
+  <!-- NAV SPONSOR SLOT — sell this for $50-200/month -->
+  <div class="nav-sponsor-slot" title="Click to advertise here">📢 Advertise Here</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    AI-Powered · Instant · No Signup
+  </div>
+  <h1>Fix Your Grammar<br><span class="green">Instantly.</span> <span class="italic">For Free.</span></h1>
+  <p class="hero-desc">Paste any text and get instant corrections for grammar, spelling, punctuation and style. Powered by Claude AI — smarter than Grammarly, always free.</p>
+  <div class="hero-proof">
+    <div class="proof-item"><span class="proof-icon">✅</span> No word limits</div>
+    <div class="proof-item"><span class="proof-icon">✅</span> No account needed</div>
+    <div class="proof-item"><span class="proof-icon">✅</span> Works in 30+ languages</div>
+    <div class="proof-item"><span class="proof-icon">✅</span> Explains every error</div>
+  </div>
+</section>
+
+<!-- AD SLOT — TOP BANNER (728x90 Leaderboard) -->
+<!-- Replace with your AdSense code after approval -->
+<div class="ad-banner">
+  <div class="ad-slot leaderboard">
+    <div class="ad-slot-label">
+      📊 Advertisement
+      <span>728×90 — Google AdSense Leaderboard</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPONSOR BANNER — Slot 1 (Premium) -->
+<div class="sponsor-bar">
+  <div class="sponsor-inner">
+    <div class="sponsor-left">
+      <div>
+        <div class="sponsor-tag">Sponsored</div>
+        <div class="sponsor-name">Your Brand Here</div>
+        <div class="sponsor-desc">Reach 10,000+ writers and students daily. Starting at $99/month.</div>
+      </div>
+    </div>
+    <div>
+      <button class="sponsor-cta" onclick="window.location.href='mailto:sponsor@toolbanana.com'">Get This Spot →</button>
+      <div class="sponsor-edit-hint">📧 sponsor@toolbanana.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN TOOL -->
+<div class="tool-wrap">
+  <div class="tool-card">
+
+    <!-- TOOL HEADER -->
+    <div class="tool-header">
+      <div class="tool-header-left">
+        <div class="tool-icon">✅</div>
+        <div class="tool-title-block">
+          <div class="tool-name">Grammar Checker & Fixer</div>
+          <div class="tool-subtitle">Paste text → get instant AI corrections</div>
+        </div>
+      </div>
+      <div class="tone-row">
+        <span class="tone-label">Tone:</span>
+        <div class="tone-chip sel" onclick="selTone(this,'standard')">Standard</div>
+        <div class="tone-chip" onclick="selTone(this,'formal')">Formal</div>
+        <div class="tone-chip" onclick="selTone(this,'casual')">Casual</div>
+        <div class="tone-chip" onclick="selTone(this,'academic')">Academic</div>
+      </div>
+    </div>
+
+    <!-- EDITORS -->
+    <div class="editors">
+      <div class="editor-pane">
+        <div class="editor-label">
+          <span class="editor-label-text">📝 Your Text</span>
+          <div class="editor-actions">
+            <button class="editor-action" onclick="pasteText()">Paste</button>
+            <button class="editor-action" onclick="clearAll()">Clear</button>
+          </div>
+        </div>
+        <textarea class="txta" id="inputText" placeholder="Paste or type your text here...&#10;&#10;Example: i went to store yesterday and buyed some apple's. their was alot of people there, its was very crowd." oninput="updateStats()"></textarea>
+      </div>
+      <div class="editor-pane">
+        <div class="editor-label">
+          <span class="editor-label-text">✅ Fixed Version</span>
+          <div class="editor-actions">
+            <button class="editor-action" onclick="copyFixed()">Copy</button>
+          </div>
+        </div>
+        <textarea class="txta output" id="outputText" placeholder="Your corrected text will appear here..." readonly></textarea>
+      </div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item">Words: <strong id="wordCount">0</strong></div>
+      <div class="stat-item">Characters: <strong id="charCount">0</strong></div>
+      <div class="stat-item errors">Errors found: <strong id="errorCount">—</strong></div>
+      <div class="stat-item score">Readability: <strong id="readScore">—</strong></div>
+      <div class="stat-item">Read time: <strong id="readTime">—</strong></div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="status" id="status"></div>
+
+    <!-- RUN BUTTON -->
+    <div class="run-section">
+      <button class="run-btn go" id="runBtn" onclick="runChecker()">✅ Check & Fix Grammar</button>
+      <button class="copy-btn" onclick="copyFixed()" id="copyBtn" style="display:none">📋 Copy Fixed Text</button>
+    </div>
+
+    <!-- SCORE CARDS -->
+    <div class="score-section" id="scoreSection">
+      <div class="score-grid">
+        <div class="score-card">
+          <div class="score-num good" id="scoreOverall">—</div>
+          <div class="score-label">Overall Score</div>
+        </div>
+        <div class="score-card">
+          <div class="score-num" id="scoreGrammar">—</div>
+          <div class="score-label">Grammar</div>
+        </div>
+        <div class="score-card">
+          <div class="score-num" id="scoreClarity">—</div>
+          <div class="score-label">Clarity</div>
+        </div>
+        <div class="score-card">
+          <div class="score-num" id="scoreStyle">—</div>
+          <div class="score-label">Style</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ERROR EXPLANATIONS -->
+    <div class="errors-panel" id="errorsPanel">
+      <div class="errors-title">🔍 Corrections Explained</div>
+      <div id="errorsList"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- AD SLOT — MID PAGE (300x250 Rectangle) -->
+<div class="ad-mid">
+  <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+    <div class="ad-slot square" style="flex-shrink:0">
+      <div class="ad-slot-label">
+        📊 Advertisement
+        <span>300×250 — AdSense Rectangle</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:240px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px">💡 Pro Tip</div>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Use the <strong>Academic tone</strong> for essays and research papers. It makes your writing more formal and avoids contractions automatically.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="features-title">Everything a grammar checker should be.</div>
+  <div class="features-sub">Built for students, professionals, ESL learners, and writers worldwide.</div>
+  <div class="features-grid">
+    <div class="feat"><div class="feat-icon">🧠</div><div class="feat-name">AI-Powered Corrections</div><div class="feat-desc">Uses Claude AI to understand context, not just rules. Catches errors other tools miss.</div></div>
+    <div class="feat"><div class="feat-icon">📖</div><div class="feat-name">Explains Every Error</div><div class="feat-desc">Don't just get a fix — understand why it was wrong. Learn as you go.</div></div>
+    <div class="feat"><div class="feat-icon">🎯</div><div class="feat-name">Tone Selector</div><div class="feat-desc">Choose Formal, Casual, Academic or Standard. The AI adjusts its corrections accordingly.</div></div>
+    <div class="feat"><div class="feat-icon">🌍</div><div class="feat-name">30+ Languages</div><div class="feat-desc">Check grammar in Spanish, French, German, Hindi, Arabic and 30+ more languages.</div></div>
+    <div class="feat"><div class="feat-icon">📊</div><div class="feat-name">Readability Score</div><div class="feat-desc">See how easy your text is to read with a Flesch-Kincaid style score.</div></div>
+    <div class="feat"><div class="feat-icon">🔒</div><div class="feat-name">Private & Secure</div><div class="feat-desc">Your text is never stored or shared. Each check is processed and immediately deleted.</div></div>
+  </div>
+</section>
+
+<!-- VS TABLE (Great for SEO — targets "grammarly alternative" searches) -->
+<section class="vs-section">
+  <div class="vs-title">How we compare</div>
+  <div class="vs-table">
+    <div class="vs-row header">
+      <div class="vs-cell header-cell">Feature</div>
+      <div class="vs-cell header-cell us">GrammarBanana</div>
+      <div class="vs-cell header-cell">Grammarly</div>
+      <div class="vs-cell header-cell">QuillBot</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell">Price</div>
+      <div class="vs-cell us">✅ Free</div>
+      <div class="vs-cell"><span class="cross">$12/mo</span></div>
+      <div class="vs-cell"><span class="cross">$9.95/mo</span></div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell">No signup required</div>
+      <div class="vs-cell us">✅ Yes</div>
+      <div class="vs-cell"><span class="cross">No</span></div>
+      <div class="vs-cell"><span class="cross">No</span></div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell">Explains errors</div>
+      <div class="vs-cell us">✅ Yes</div>
+      <div class="vs-cell"><span class="check">✅ Premium</span></div>
+      <div class="vs-cell"><span class="cross">Limited</span></div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell">Word limit</div>
+      <div class="vs-cell us">✅ Unlimited</div>
+      <div class="vs-cell"><span class="cross">Limited free</span></div>
+      <div class="vs-cell"><span class="cross">125 words free</span></div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell">Tone selector</div>
+      <div class="vs-cell us">✅ 4 tones</div>
+      <div class="vs-cell"><span class="check">✅ Premium</span></div>
+      <div class="vs-cell"><span class="cross">No</span></div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell">AI-powered</div>
+      <div class="vs-cell us">✅ Claude AI</div>
+      <div class="vs-cell"><span class="check">✅ Yes</span></div>
+      <div class="vs-cell"><span class="check">✅ Yes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-title">Frequently Asked Questions</div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is GrammarBanana really free? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes, 100% free with no hidden costs. No signup, no credit card, no word limits. We're supported by non-intrusive ads and optional sponsorships.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How accurate is the grammar checker? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Very accurate. We use Claude AI — one of the world's most capable language models — which understands context and nuance, not just grammar rules. It catches errors that rule-based checkers miss.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Can I check grammar in languages other than English? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes! The AI supports 30+ languages including Spanish, French, German, Portuguese, Hindi, Arabic, and more. Just paste your text — it auto-detects the language.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is my text private? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Absolutely. Your text is sent to the AI for processing and immediately discarded. We do not store, log or share any text you submit. Your content is always private.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What's the difference between the tone options? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Standard fixes basic errors. Formal makes writing more professional. Casual keeps it conversational and relaxed. Academic is best for essays, research papers and reports — avoids contractions and informal language.</div>
+  </div>
+</section>
+
+<!-- AD SLOT — BOTTOM (728x90) -->
+<div class="ad-bottom">
+  <div class="ad-slot leaderboard">
+    <div class="ad-slot-label">
+      📊 Advertisement
+      <span>728×90 — Google AdSense Leaderboard</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPONSOR SLOT 2 — Content Block -->
+<div class="sponsor2">
+  <div class="sponsor2-inner">
+    <div class="sponsor2-tag">🤝 Partner with us</div>
+    <div class="sponsor2-title">Advertise to 10,000+ Daily Writers</div>
+    <div class="sponsor2-desc">Students, professionals, bloggers, ESL learners — all use GrammarBanana daily. Get your brand in front of them.</div>
+    <button class="sponsor2-btn" onclick="window.location.href='mailto:sponsor@toolbanana.com'">📧 Get Sponsorship Info</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Grammar<span>Banana</span></div>
+        <div class="footer-tagline">Free AI grammar checker for everyone. No signup, no limits, no cost. Built with ❤️ for writers worldwide.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Tools</div>
+        <a class="footer-link" href="/grammar">Grammar Checker</a>
+        <a class="footer-link" href="/">AI Writer</a>
+        <a class="footer-link" href="/">Text Converter</a>
+        <a class="footer-link" href="/">Video Downloader</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <a class="footer-link" href="mailto:sponsor@toolbanana.com">Advertise</a>
+        <a class="footer-link" href="#">Privacy Policy</a>
+        <a class="footer-link" href="#">Terms of Use</a>
+        <a class="footer-link" href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 GrammarBanana · Free Grammar Checker · All rights reserved</div>
+      <div class="footer-badges">
+        <div class="footer-badge">🔒 Private</div>
+        <div class="footer-badge">⚡ Free</div>
+        <div class="footer-badge">🤖 AI Powered</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// STATE
+let curTone = 'standard';
+
+// TONE
+function selTone(el, t) {
+  curTone = t;
+  document.querySelectorAll('.tone-chip').forEach(x => x.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+// STATS
+function updateStats() {
+  const text = document.getElementById('inputText').value;
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+  document.getElementById('wordCount').textContent = words;
+  document.getElementById('charCount').textContent = text.length;
+  const secs = Math.ceil(words / 3.3);
+  document.getElementById('readTime').textContent = secs < 60 ? secs + 's' : Math.ceil(secs/60) + ' min';
+}
+
+// STATUS
+function setStatus(type, msg) {
+  const el = document.getElementById('status');
+  el.className = 'status show ' + type;
+  el.innerHTML = type === 'loading' ? '<div class="spin"></div><span>' + msg + '</span>' : '<span>' + msg + '</span>';
+}
+function hideStatus() {
+  document.getElementById('status').className = 'status';
+}
+
+// PASTE
+async function pasteText() {
+  try {
+    const text = await navigator.clipboard.readText();
+    document.getElementById('inputText').value = text;
+    updateStats();
+  } catch(e) {
+    document.getElementById('inputText').focus();
+  }
+}
+
+// CLEAR
+function clearAll() {
+  document.getElementById('inputText').value = '';
+  document.getElementById('outputText').value = '';
+  document.getElementById('errorCount').textContent = '—';
+  document.getElementById('readScore').textContent = '—';
+  document.getElementById('readTime').textContent = '—';
+  document.getElementById('wordCount').textContent = '0';
+  document.getElementById('charCount').textContent = '0';
+  document.getElementById('scoreSection').classList.remove('show');
+  document.getElementById('errorsPanel').classList.remove('show');
+  document.getElementById('copyBtn').style.display = 'none';
+  hideStatus();
+}
+
+// COPY
+function copyFixed() {
+  const text = document.getElementById('outputText').value;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyBtn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ Copied!';
+    setTimeout(() => btn.innerHTML = orig, 2000);
+  });
+}
+
+// PARSE AI RESPONSE
+function parseResponse(raw) {
+  const lines = raw.split('\n');
+  let fixedText = '';
+  let errors = [];
+  let scores = { overall: null, grammar: null, clarity: null, style: null };
+
+  let section = '';
+  let fixedLines = [];
+
+  for (let line of lines) {
+    const l = line.trim();
+    if (l.startsWith('FIXED_TEXT:')) {
+      section = 'fixed';
+      const inline = l.replace('FIXED_TEXT:', '').trim();
+      if (inline) fixedLines.push(inline);
+    } else if (l.startsWith('ERRORS:')) {
+      section = 'errors';
+    } else if (l.startsWith('SCORES:')) {
+      section = 'scores';
+    } else if (section === 'fixed' && l) {
+      fixedLines.push(l);
+    } else if (section === 'errors' && l.startsWith('-')) {
+      const parts = l.substring(1).split('|');
+      if (parts.length >= 3) {
+        errors.push({ type: parts[0].trim().toLowerCase(), label: parts[0].trim(), desc: parts[1].trim() + (parts[2] ? ' → ' + parts[2].trim() : '') });
+      }
+    } else if (section === 'scores' && l) {
+      const m = l.match(/(\w+):\s*(\d+)/);
+      if (m) scores[m[1].toLowerCase()] = parseInt(m[2]);
+    }
+  }
+
+  fixedText = fixedLines.join('\n').trim();
+  return { fixedText, errors, scores };
+}
+
+// MAIN CHECKER
+async function runChecker() {
+  const input = document.getElementById('inputText').value.trim();
+  if (!input) { setStatus('error', '⚠️ Please paste some text first!'); return; }
+  if (input.split(/\s+/).length < 3) { setStatus('error', '⚠️ Please enter at least a few words.'); return; }
+
+  const btn = document.getElementById('runBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spin" style="border-top-color:#fff"></div> Checking grammar...';
+  setStatus('loading', 'AI is analyzing your text...');
+  document.getElementById('copyBtn').style.display = 'none';
+  document.getElementById('scoreSection').classList.remove('show');
+  document.getElementById('errorsPanel').classList.remove('show');
+
+  const toneInstructions = {
+    standard: 'Fix all grammar, spelling and punctuation errors. Keep the original style.',
+    formal: 'Fix all errors AND make the writing more formal and professional. Remove contractions and informal language.',
+    casual: 'Fix grammar errors but keep the casual, conversational tone. Contractions are fine.',
+    academic: 'Fix all errors AND elevate to academic writing standard. Remove contractions, use precise vocabulary, ensure formal register.'
+  };
+
+  const prompt = `You are a professional grammar checker. Analyze the text and respond in EXACTLY this format:
+
+FIXED_TEXT:
+[Write the complete corrected text here, nothing else]
+
+ERRORS:
+- [type] | [short description of error] | [original → corrected]
+- [type] | [short description of error] | [original → corrected]
+(list each error found, type must be one of: grammar, spelling, or style)
+(if no errors, write: - style | Great writing! No errors found. | —)
+
+SCORES:
+overall: [0-100]
+grammar: [0-100]
+clarity: [0-100]
+style: [0-100]
+
+Instructions: ${toneInstructions[curTone]}
+
+Text to check:
+"""
+${input}
+"""`;
+
+  try {
+    const res = await fetch('/api/claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    const { fixedText, errors, scores } = parseResponse(data.result);
+
+    // Set fixed text
+    document.getElementById('outputText').value = fixedText || data.result;
+    document.getElementById('copyBtn').style.display = 'flex';
+
+    // Error count
+    const realErrors = errors.filter(e => !e.desc.includes('No errors'));
+    document.getElementById('errorCount').textContent = realErrors.length;
+
+    // Readability
+    const words = input.split(/\s+/).length;
+    const sentences = (input.match(/[.!?]+/g) || []).length || 1;
+    const avgWords = words / sentences;
+    const readability = avgWords < 15 ? 'Easy' : avgWords < 25 ? 'Medium' : 'Complex';
+    document.getElementById('readScore').textContent = readability;
+
+    // Scores
+    if (scores.overall !== null) {
+      document.getElementById('scoreSection').classList.add('show');
+      ['overall', 'grammar', 'clarity', 'style'].forEach(k => {
+        const el = document.getElementById('score' + k.charAt(0).toUpperCase() + k.slice(1));
+        const val = scores[k] || '—';
+        el.textContent = val !== null ? val + '/100' : '—';
+        el.className = 'score-num ' + (val >= 80 ? 'good' : val >= 60 ? 'warn' : 'bad');
+      });
+    }
+
+    // Error explanations
+    if (errors.length > 0) {
+      const list = document.getElementById('errorsList');
+      list.innerHTML = errors.slice(0, 8).map(e => `
+        <div class="error-item ${e.type}">
+          <div class="error-dot"></div>
+          <div class="error-text">
+            <div class="error-label">${e.label}</div>
+            <div class="error-desc">${e.desc}</div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('errorsPanel').classList.add('show');
+    }
+
+    hideStatus();
+    if (realErrors.length === 0) {
+      setStatus('success', '🎉 Perfect! No grammar errors found.');
+    }
+
+  } catch(e) {
+    setStatus('error', '❌ Error: ' + e.message + '. Make sure your backend is deployed on Vercel.');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '✅ Check & Fix Grammar';
+}
+
+// FAQ
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// Init
+updateStats();
+</script>
+</body>
+</html>
