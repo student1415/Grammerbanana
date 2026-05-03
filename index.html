@@ -185,6 +185,45 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   .hero{padding:36px 16px 24px}
   nav{padding:0 16px}
 }
+/* ===== HUMANIZER STYLES ===== */
+.hum-wrap{max-width:740px;margin:32px auto 0;padding:0 20px}
+.hum-card{background:var(--s);border:1px solid var(--b);border-radius:20px;overflow:hidden;box-shadow:var(--shl)}
+.hum-head{padding:14px 20px;background:var(--s2);border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hum-icon{width:34px;height:34px;background:#fdf4e7;border:1px solid #fde68a;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.hum-title{font-family:'Fraunces',serif;font-size:15px;font-weight:700}
+.hum-sub{font-size:11px;color:var(--mu);margin-top:1px}
+.hum-badge{margin-left:auto;padding:4px 12px;background:#fdf4e7;border:1px solid #fde68a;border-radius:20px;font-size:11px;font-weight:600;color:#92400e}
+.style-row{padding:12px 20px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--s)}
+.style-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;margin-right:2px}
+.sty{padding:6px 14px;background:var(--s2);border:1.5px solid var(--b);border-radius:20px;font-size:12px;font-weight:500;color:var(--mu);cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;white-space:nowrap}
+.sty:hover{color:var(--ink);border-color:var(--b2)}
+.sty.sel{background:#fdf4e7;border-color:#f59e0b;color:#92400e}
+.intent-row{padding:8px 20px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;background:var(--s)}
+.intent-row::-webkit-scrollbar{display:none}
+.int-chip{padding:4px 12px;background:var(--s2);border:1px solid var(--b);border-radius:20px;font-size:11px;font-weight:600;color:var(--mu);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'Inter',sans-serif;flex-shrink:0}
+.int-chip:hover{color:var(--ink);border-color:var(--b2)}
+.int-chip.sel{background:var(--blbg);border-color:var(--blbr);color:var(--bl)}
+.hum-eds{display:grid;grid-template-columns:1fr 1fr;min-height:200px}
+.hum-eds .ep:first-child{border-right:1px solid var(--b)}
+.hum-out{background:#fffdf7;cursor:default;color:var(--ink2)}
+.hum-sb{padding:9px 16px;background:var(--s2);border-top:1px solid var(--b);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hum-stb{margin:0 16px 12px;padding:10px 14px;border-radius:9px;font-size:13px;font-weight:500;display:none;align-items:center;gap:8px}
+.hum-stb.show{display:flex}
+.hum-stb.ld{background:var(--s2);color:var(--mu);border:1px solid var(--b)}
+.hum-stb.er{background:var(--rbg);color:var(--r);border:1px solid var(--rbr)}
+.hum-stb.ok{background:#fdf4e7;color:#92400e;border:1px solid #fde68a}
+.hum-rw{padding:9px 16px;border-top:1px solid var(--b);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.hum-btn{flex:1;min-width:160px;padding:13px 20px;background:#d97706;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Fraunces',serif;letter-spacing:.2px;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.hum-btn:hover{background:#b45309;transform:translateY(-1px);box-shadow:0 4px 16px rgba(217,119,6,.3)}
+.hum-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.hum-copy{padding:13px 16px;background:var(--s2);border:1.5px solid var(--b);border-radius:10px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;display:none;align-items:center;gap:6px}
+.hum-copy:hover{border-color:var(--b2);background:var(--s3)}
+.hum-copy.show{display:flex}
+.intensity-row{padding:10px 20px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:14px;background:var(--s)}
+.int-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.int-slider{flex:1;accent-color:#d97706}
+.int-val{font-size:12px;font-weight:600;color:#92400e;min-width:80px;text-align:right}
+@media(max-width:600px){.hum-eds{grid-template-columns:1fr}.hum-eds .ep:first-child{border-right:none;border-bottom:1px solid var(--b)}}
 </style>
 </head>
 <body>
@@ -207,12 +246,15 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </section>
 
-<div class="adw"><div class="ads lb"><span>Advertisement · 728×90</span></div></div>
+<div class="adw">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
 
 <div class="spw">
   <div class="sp">
-    <div><div class="stag">Sponsored</div><div class="sn">Your Brand Here</div><div class="sd">Reach 10,000+ daily writers, students & professionals.</div></div>
-    <button class="sbtn" onclick="window.location.href='mailto:ads@grammarbanana.vercel.app'">Get This Spot →</button>
+    <div><div class="stag">Did you know</div><div class="sn">GrammarBanana checks unlimited words — free, always</div><div class="sd">No word cap. No signup. No upsells. Ever.</div></div>
+    <button class="sbtn" onclick="document.getElementById('inp').focus()">Try it now →</button>
   </div>
 </div>
 
@@ -277,6 +319,55 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
+<!-- ===== AI HUMANIZER TOOL ===== -->
+<div class="hum-wrap">
+  <div class="hum-card">
+    <div class="hum-head">
+      <div class="hum-icon">🧬</div>
+      <div><div class="hum-title">AI Humanizer</div><div class="hum-sub">Make AI text sound naturally human — your style, your voice</div></div>
+      <div class="hum-badge">✨ New</div>
+    </div>
+    <div class="style-row">
+      <span class="style-label">Style:</span>
+      <div class="sty sel" onclick="selHStyle(this,'natural')">🗣️ Natural</div>
+      <div class="sty" onclick="selHStyle(this,'casual')">😎 Casual</div>
+      <div class="sty" onclick="selHStyle(this,'confident')">💼 Confident</div>
+      <div class="sty" onclick="selHStyle(this,'storyteller')">📖 Storyteller</div>
+      <div class="sty" onclick="selHStyle(this,'witty')">⚡ Witty</div>
+      <div class="sty" onclick="selHStyle(this,'academic')">🎓 Academic</div>
+    </div>
+    <div class="intent-row">
+      <span class="style-label" style="margin-right:4px">Use for:</span>
+      <div class="int-chip sel" onclick="selHIntent(this,'general')">✍️ General</div>
+      <div class="int-chip" onclick="selHIntent(this,'email')">📧 Email</div>
+      <div class="int-chip" onclick="selHIntent(this,'essay')">📄 Essay</div>
+      <div class="int-chip" onclick="selHIntent(this,'social')">📱 Social Post</div>
+      <div class="int-chip" onclick="selHIntent(this,'linkedin')">💼 LinkedIn</div>
+      <div class="int-chip" onclick="selHIntent(this,'blog')">📝 Blog</div>
+    </div>
+    <div class="intensity-row">
+      <span class="int-label">Humanize:</span>
+      <input type="range" class="int-slider" id="humIntensity" min="1" max="3" value="2" step="1" oninput="updateIntLabel()">
+      <span class="int-val" id="intLabel">Balanced</span>
+    </div>
+    <div class="hum-eds">
+      <div class="ep">
+        <div class="et"><span class="el">🤖 AI Text (paste here)</span><div class="ea"><button class="eab" onclick="pasteHum()">Paste</button><button class="eab" onclick="clearHum()">Clear</button></div></div>
+        <textarea id="humIn" placeholder="Paste ChatGPT, Claude or any AI-generated text here..."></textarea>
+      </div>
+      <div class="ep">
+        <div class="et"><span class="el">🧑 Human Version</span><div class="ea"><button class="eab" onclick="copyHumOut()">Copy</button></div></div>
+        <textarea id="humOut" class="outt hum-out" readonly placeholder="Your human-sounding version will appear here..."></textarea>
+      </div>
+    </div>
+    <div class="hum-stb" id="humStatus"></div>
+    <div class="hum-rw">
+      <button class="hum-btn" id="humBtn" onclick="runHumanize()">🧬 Humanize Text</button>
+      <button class="hum-copy" id="humCopyBtn" onclick="copyHumOut()">📋 Copy Result</button>
+    </div>
+  </div>
+</div>
+
 <section class="sec">
   <div class="stitle">Everything a grammar checker should be.</div>
   <div class="ssub">Built for students, professionals, bloggers and everyday writers worldwide.</div>
@@ -287,6 +378,7 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
     <div class="ft"><div class="fi">⚡</div><div class="fn">Even One Sentence</div><div class="fd">No minimum word count. Check anything from a single line to a full essay.</div></div>
     <div class="ft"><div class="fi">🔒</div><div class="fn">Private & Secure</div><div class="fd">Your text is never stored or shared. Processed and immediately discarded.</div></div>
     <div class="ft"><div class="fi">📊</div><div class="fn">Writing Score</div><div class="fd">See your overall, grammar, clarity and style scores after every single check.</div></div>
+    <div class="ft"><div class="fi">🧬</div><div class="fn">AI Humanizer</div><div class="fd">Paste any AI-generated text and get a version that reads like a real human wrote it — in your chosen style.</div></div>
   </div>
 </section>
 
@@ -300,6 +392,7 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
     <div class="vsr"><div class="vc">Explains errors</div><div class="vc us">✅ Always</div><div class="vc"><span class="pt">Premium only</span></div><div class="vc"><span class="cx">Never</span></div></div>
     <div class="vsr"><div class="vc">Writing modes</div><div class="vc us">✅ 6 modes</div><div class="vc"><span class="pt">Premium only</span></div><div class="vc"><span class="cx">No</span></div></div>
     <div class="vsr"><div class="vc">Pushes upgrades</div><div class="vc us">✅ Never</div><div class="vc"><span class="cx">Constantly</span></div><div class="vc"><span class="cx">Yes</span></div></div>
+    <div class="vsr"><div class="vc">AI Humanizer</div><div class="vc us">✅ Free</div><div class="vc"><span class="cx">No</span></div><div class="vc"><span class="cx">No</span></div></div>
   </div>
 </section>
 
@@ -313,10 +406,13 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
 </section>
 
 <div class="adm">
-  <div class="ads rect"><span>Ad · 300×250</span></div>
   <div style="flex:1;min-width:220px;background:var(--s);border:1px solid var(--b);border-radius:14px;padding:20px">
     <div style="font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">💡 Quick Tip</div>
     <p style="font-size:14px;color:var(--ink2);line-height:1.7">Use <strong>Academic mode</strong> for essays and assignments. It removes contractions, uses precise vocabulary, and ensures formal register automatically.</p>
+  </div>
+  <div style="width:300px;flex-shrink:0">
+    <ins class="adsbygoogle" style="display:block;width:300px;height:250px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="rectangle"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 </div>
 
@@ -329,13 +425,16 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
-<div class="adb"><div class="ads lb"><span>Advertisement · 728×90</span></div></div>
+<div class="adb">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
 
 <footer>
   <div class="fi2">
     <div class="ftop">
       <div><div class="fbn">Grammar<b>Banana</b></div><div class="fbd">Free AI grammar checker for everyone. No tracking ads. No signup ever. Built for writers worldwide.</div></div>
-      <div><div class="fct">Tools</div><a class="fl" href="/">Grammar Checker</a><a class="fl" href="/">AI Writer</a><a class="fl" href="/">Paraphrase Tool</a><a class="fl" href="/">Word Counter</a></div>
+      <div><div class="fct">Tools</div><a class="fl" href="/">Grammar Checker</a><a class="fl" href="/" title="Coming soon">AI Humanizer ✨</a><a class="fl" href="/" style="opacity:.5;cursor:default" title="Coming soon">Paraphrase Tool</a><a class="fl" href="/" style="opacity:.5;cursor:default" title="Coming soon">Word Counter</a></div>
       <div><div class="fct">Company</div><a class="fl" href="mailto:ads@grammarbanana.vercel.app">Advertise</a><a class="fl" href="#">Privacy Policy</a><a class="fl" href="#">Terms</a><a class="fl" href="#">Contact</a></div>
     </div>
     <div class="fbot">
@@ -481,7 +580,71 @@ function tFaq(el){
   document.querySelectorAll('.fqi').forEach(x=>x.classList.remove('open'));
   if(!was)item.classList.add('open');
 }
+// ===== HUMANIZER =====
+let humStyle='natural', humIntent='general';
+function selHStyle(el,s){humStyle=s;document.querySelectorAll('.sty').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');}
+function selHIntent(el,i){humIntent=i;document.querySelectorAll('.int-chip').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');}
+function updateIntLabel(){const v=parseInt(document.getElementById('humIntensity').value);document.getElementById('intLabel').textContent=v===1?'Light touch':v===2?'Balanced':'Full rewrite';}
+function pasteHum(){try{navigator.clipboard.readText().then(t=>{document.getElementById('humIn').value=t;});}catch{document.getElementById('humIn').focus();}}
+function clearHum(){document.getElementById('humIn').value='';document.getElementById('humOut').value='';document.getElementById('humCopyBtn').classList.remove('show');setHumStatus('');}
+function copyHumOut(){const t=document.getElementById('humOut').value;if(!t)return;navigator.clipboard.writeText(t).then(()=>{const b=document.getElementById('humCopyBtn');b.innerHTML='✅ Copied!';setTimeout(()=>b.innerHTML='📋 Copy Result',2000);});}
+function setHumStatus(type,msg){const el=document.getElementById('humStatus');if(!type){el.className='hum-stb';return;}el.className='hum-stb show '+type;el.innerHTML=type==='ld'?`<div class="spin"></div><span>${msg}</span>`:`<span>${msg}</span>`;}
+const styleGuides={
+  natural:'Rewrite in a natural, flowing human voice. Vary sentence length — mix short punchy sentences with longer ones. Use occasional filler phrases like "honestly", "to be fair", "the thing is". Avoid robotic parallelism. Sound like a real person thinking out loud.',
+  casual:'Rewrite in a relaxed, conversational tone. Use contractions freely. Keep it friendly and approachable. Short sentences. Occasional incomplete thoughts are fine. Sound like texting a smart friend.',
+  confident:'Rewrite with a direct, authoritative voice. Cut filler words. Use active voice. Be declarative. Sound like someone who knows what they\'re talking about but isn\'t arrogant.',
+  storyteller:'Rewrite with narrative flow. Use sensory detail where possible. Build slight tension or interest. Transition smoothly. Sound like an engaging writer who draws you in.',
+  witty:'Rewrite with light humor and personality. Add a clever turn of phrase here and there. Keep it smart, not forced. Sound like someone genuinely interesting to read.',
+  academic:'Rewrite in a scholarly but human tone. Precise vocabulary, logical flow, no contractions — but avoid robotic sentence patterns. Sound like a real academic, not an AI summary.'
+};
+const intentGuides={
+  general:'General writing — no specific format needed.',
+  email:'This will be used in an email. Ensure appropriate greeting/closing tone if present.',
+  essay:'Academic essay context. Maintain logical paragraph structure.',
+  social:'Social media post. Keep it punchy, engaging, under 280 characters if possible.',
+  linkedin:'LinkedIn post. Professional but personal. Thought-leadership tone.',
+  blog:'Blog article. Engaging opening, clear flow, human personality throughout.'
+};
+const intensityGuides={1:'Make minimal changes — fix only the most obvious AI patterns. Preserve most of the original.',2:'Balance — rewrite clearly but keep the core message intact.',3:'Full rewrite — transform completely into natural human writing. Be bold with changes.'};
+async function runHumanize(){
+  const inp=document.getElementById('humIn').value.trim();
+  if(!inp){setHumStatus('er','⚠️ Paste some AI text first!');return;}
+  const btn=document.getElementById('humBtn');
+  btn.disabled=true;btn.innerHTML='<div class="spin" style="border-top-color:#fff"></div> Humanizing...';
+  setHumStatus('ld','Rewriting in human voice...');
+  document.getElementById('humCopyBtn').classList.remove('show');
+  const intensity=parseInt(document.getElementById('humIntensity').value);
+  const prompt=`You are an expert at rewriting AI-generated text to sound authentically human.
+
+Style: ${styleGuides[humStyle]}
+Context: ${intentGuides[humIntent]}
+Intensity: ${intensityGuides[intensity]}
+
+CRITICAL RULES:
+- Do NOT start every sentence the same way
+- Vary sentence length and structure — this is the #1 AI tell
+- Remove perfectly parallel lists unless absolutely necessary
+- Add natural imperfections: a rhetorical question, a brief aside, an "actually" or "look"
+- Never use: "In conclusion", "Furthermore", "It is worth noting", "Delve", "Tapestry", "Multifaceted", "In today's world"
+- The output must pass as written by a real human
+- Output ONLY the rewritten text. No preamble, no explanation, no quotes around it.
+
+AI text to humanize:
+"""
+${inp}
+"""`;
+  try{
+    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
+    const data=await res.json();
+    if(data.error)throw new Error(data.error);
+    const result=data.result||'';
+    document.getElementById('humOut').value=result.trim();
+    document.getElementById('humCopyBtn').classList.add('show');
+    setHumStatus('ok','✨ Done! Your text now sounds human.');
+  }catch(e){setHumStatus('er','❌ '+e.message);}
+  btn.disabled=false;btn.innerHTML='🧬 Humanize Text';
+}
 updateStats();
-</script>
+updateIntLabel();</script>
 </body>
 </html>
