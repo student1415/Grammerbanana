@@ -15,6 +15,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"GrammarBanana","description":"Free AI grammar checker. No signup, no limits, no cost.","url":"https://grammarbanana.vercel.app","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Grammar correction","Spelling checker","No word limits","No signup required","Error explanations","6 writing modes"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is GrammarBanana really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free forever. No signup, no credit card, no word limits ever."}},{"@type":"Question","name":"Is GrammarBanana better than Grammarly free?","acceptedAnswer":{"@type":"Answer","text":"Yes. GrammarBanana has zero word limits, requires no account, explains every error, and never pushes paid upgrades. Grammarly free is heavily restricted."}},{"@type":"Question","name":"Is there a word limit?","acceptedAnswer":{"@type":"Answer","text":"No word limits. Check one sentence or a full essay — completely free."}}]}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1431591420159993" crossorigin="anonymous"></script>
+<!-- Adsterra -->
+<script async src="https://pl29326846.profitablecpmratenetwork.com/4d/85/c1/4d85c16e1ae124b2587ab926f1fa4692.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -386,10 +388,14 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
-<!-- AD: after Grammar Checker -->
+<!-- AD: after Grammar Checker — AdSense primary, Adsterra fallback -->
 <div class="between-ad" id="adBetween1">
   <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<!-- Adsterra slot 1 — shows when AdSense empty -->
+<div id="adsterra1" style="max-width:740px;margin:8px auto;padding:0 20px;display:none">
+  <div id="adsterra-container-1"></div>
 </div>
 
 <!-- ===== AI HUMANIZER TOOL ===== -->
@@ -441,10 +447,13 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
-<!-- AD: after Humanizer -->
+<!-- AD: after Humanizer — AdSense primary, Adsterra fallback -->
 <div class="between-ad" id="adBetween2">
   <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div id="adsterra2" style="max-width:740px;margin:8px auto;padding:0 20px;display:none">
+  <div id="adsterra-container-2"></div>
 </div>
 
 <!-- PARAPHRASE TOOL -->
@@ -882,17 +891,33 @@ ${inp}
 }
 updateStats();
 updateIntLabel();
-// ===== AD VISIBILITY — show only when AdSense fills the slot =====
+// ===== HYBRID AD LOGIC — AdSense priority, Adsterra fallback =====
 (function(){
   function checkAds(){
+    // Show AdSense slots if filled
     document.querySelectorAll('ins.adsbygoogle').forEach(ins=>{
       const filled=ins.getAttribute('data-ad-status')==='filled'||ins.offsetHeight>10;
       if(filled){
-        const p=ins.closest('[id^="ad"],[id^="side"]');
-        if(p)p.style.display='block';
-        // sidebar-ad inner wrapper
-        const sa=ins.closest('.sidebar-ad');
-        if(sa)sa.style.display='block';
+        const p=ins.closest('[id^="ad"],[id^="side"]');if(p)p.style.display='block';
+        const sa=ins.closest('.sidebar-ad');if(sa)sa.style.display='block';
+        const ba=ins.closest('.between-ad');if(ba)ba.style.display='block';
+      }
+    });
+    // Adsterra fallback — show only if AdSense NOT filled in that zone
+    const zones=[
+      {adsense:'adBetween1', adsterra:'adsterra1'},
+      {adsense:'adBetween2', adsterra:'adsterra2'},
+    ];
+    zones.forEach(z=>{
+      const ael=document.getElementById(z.adsense);
+      const tel=document.getElementById(z.adsterra);
+      if(!ael||!tel)return;
+      const ins=ael.querySelector('ins.adsbygoogle');
+      const adsenseFilled=ins&&(ins.getAttribute('data-ad-status')==='filled'||ins.offsetHeight>10);
+      if(!adsenseFilled){
+        tel.style.display='block'; // Adsterra global script handles rendering
+      } else {
+        tel.style.display='none';
       }
     });
   }
