@@ -44,6 +44,10 @@ h1{font-family:'Fraunces',serif;font-size:clamp(36px,6.5vw,62px);font-weight:900
 .ads{background:var(--s);border:1px dashed var(--b2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--mu2);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
 .ads.lb{height:90px;width:100%}
 .ads.rect{height:250px;width:300px;flex-shrink:0}
+.adslot{display:none}
+.adslot.loaded{display:block}
+.adw:empty,.adb:empty{display:none}
+ins.adsbygoogle{display:block!important}
 .spw{max-width:740px;margin:0 auto 16px;padding:0 20px}
 .sp{background:var(--ink);border-radius:16px;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .stag{font-size:9px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:3px}
@@ -223,7 +227,57 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
 .int-label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
 .int-slider{flex:1;accent-color:#d97706}
 .int-val{font-size:12px;font-weight:600;color:#92400e;min-width:80px;text-align:right}
+/* PARAPHRASE TOOL */
+.par-wrap{max-width:740px;margin:28px auto 0;padding:0 20px}
+.par-card{background:var(--s);border:1px solid var(--b);border-radius:20px;overflow:hidden;box-shadow:var(--shl)}
+.par-head{padding:14px 20px;background:var(--s2);border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.par-icon{width:34px;height:34px;background:var(--blbg);border:1px solid var(--blbr);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.par-mode-row{padding:8px 20px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;background:var(--s)}
+.par-mode-row::-webkit-scrollbar{display:none}
+.par-chip{padding:4px 12px;background:var(--s2);border:1px solid var(--b);border-radius:20px;font-size:11px;font-weight:600;color:var(--mu);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'Inter',sans-serif;flex-shrink:0}
+.par-chip:hover{color:var(--ink);border-color:var(--b2)}
+.par-chip.sel{background:var(--blbg);border-color:var(--blbr);color:var(--bl)}
+.par-eds{display:grid;grid-template-columns:1fr 1fr;min-height:180px}
+.par-eds .ep:first-child{border-right:1px solid var(--b)}
+.par-out{background:#f0f9ff;cursor:default;color:var(--ink2)}
+.par-btn{flex:1;min-width:160px;padding:13px 20px;background:var(--bl);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Fraunces',serif;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.par-btn:hover{background:#1d4ed8;transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,99,235,.3)}
+.par-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.par-stb{margin:0 16px 12px;padding:10px 14px;border-radius:9px;font-size:13px;font-weight:500;display:none;align-items:center;gap:8px}
+.par-stb.show{display:flex}
+.par-stb.ld{background:var(--s2);color:var(--mu);border:1px solid var(--b)}
+.par-stb.er{background:var(--rbg);color:var(--r);border:1px solid var(--rbr)}
+.par-stb.ok{background:var(--blbg);color:var(--bl);border:1px solid var(--blbr)}
+.par-copy{padding:13px 16px;background:var(--s2);border:1.5px solid var(--b);border-radius:10px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;display:none;align-items:center;gap:6px}
+.par-copy:hover{border-color:var(--b2);background:var(--s3)}
+.par-copy.show{display:flex}
+@media(max-width:600px){.par-eds{grid-template-columns:1fr}.par-eds .ep:first-child{border-right:none;border-bottom:1px solid var(--b)}}
+/* WORD COUNTER */
+.wc-wrap{max-width:740px;margin:28px auto 0;padding:0 20px}
+.wc-card{background:var(--s);border:1px solid var(--b);border-radius:20px;overflow:hidden;box-shadow:var(--shl)}
+.wc-head{padding:14px 20px;background:var(--s2);border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px}
+.wc-icon{width:34px;height:34px;background:var(--gbg);border:1px solid var(--gbr);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.wc-body{display:grid;grid-template-columns:1fr 1fr;min-height:180px}
+.wc-left{border-right:1px solid var(--b);display:flex;flex-direction:column}
+.wc-right{background:var(--s2);padding:16px;display:flex;flex-direction:column;gap:10px}
+.wc-stat{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.wc-stat-label{font-size:12px;color:var(--mu);font-weight:500}
+.wc-stat-val{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--ink)}
+.wc-stat-val.hi{color:var(--g)}
+.wc-bottom{padding:10px 16px;border-top:1px solid var(--b);background:var(--s2);display:flex;gap:8px;flex-wrap:wrap}
+.wc-pill{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--s);border:1px solid var(--b);color:var(--mu);font-weight:500}
+@media(max-width:600px){.wc-body{grid-template-columns:1fr}.wc-left{border-right:none;border-bottom:1px solid var(--b)}.wc-right{grid-template-columns:repeat(2,1fr);display:grid}}
 @media(max-width:600px){.hum-eds{grid-template-columns:1fr}.hum-eds .ep:first-child{border-right:none;border-bottom:1px solid var(--b)}}
+/* ===== AD LAYOUT ===== */
+.page-layout{display:grid;grid-template-columns:160px 1fr 160px;gap:0;max-width:1120px;margin:0 auto;align-items:start}
+.sidebar{width:160px;padding:8px;position:sticky;top:62px;display:none}
+.sidebar-ad{display:none}
+.sidebar-ad.loaded{display:block}
+.main-col{min-width:0}
+.between-ad{max-width:740px;margin:20px auto;padding:0 20px;display:none}
+.between-ad ins{display:block!important}
+@media(min-width:1100px){.sidebar{display:block}}
+@media(max-width:1099px){.page-layout{grid-template-columns:1fr}.sidebar{display:none}}
 </style>
 </head>
 <body>
@@ -246,7 +300,20 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </section>
 
-<div class="adw">
+<div class="page-layout">
+
+<!-- LEFT SIDEBAR -->
+<div class="sidebar" id="sideLeft">
+  <div class="sidebar-ad" id="adSideL1">
+    <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-col">
+
+<div class="adw" id="adTop" style="max-width:740px;margin:0 auto;padding:0 20px 12px;display:none">
   <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
@@ -319,6 +386,12 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
+<!-- AD: after Grammar Checker -->
+<div class="between-ad" id="adBetween1">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
 <!-- ===== AI HUMANIZER TOOL ===== -->
 <div class="hum-wrap">
   <div class="hum-card">
@@ -368,6 +441,99 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
+<!-- AD: after Humanizer -->
+<div class="between-ad" id="adBetween2">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<!-- PARAPHRASE TOOL -->
+<div class="par-wrap">
+  <div class="par-card">
+    <div class="par-head">
+      <div class="par-icon">🔄</div>
+      <div><div class="hum-title">Paraphrase Tool</div><div class="hum-sub">Rewrite any text in a different way — same meaning, fresh words</div></div>
+      <div class="hum-badge" style="background:var(--blbg);border-color:var(--blbr);color:var(--bl)">✨ New</div>
+    </div>
+    <div class="par-mode-row">
+      <span class="style-label" style="margin-right:4px">Mode:</span>
+      <div class="par-chip sel" onclick="selParMode(this,'standard')">🔄 Standard</div>
+      <div class="par-chip" onclick="selParMode(this,'fluency')">✨ Fluency</div>
+      <div class="par-chip" onclick="selParMode(this,'formal')">💼 Formal</div>
+      <div class="par-chip" onclick="selParMode(this,'simple')">🎯 Simpler</div>
+      <div class="par-chip" onclick="selParMode(this,'creative')">🎨 Creative</div>
+      <div class="par-chip" onclick="selParMode(this,'shorten')">✂️ Shorten</div>
+      <div class="par-chip" onclick="selParMode(this,'expand')">📝 Expand</div>
+    </div>
+    <div class="par-eds">
+      <div class="ep">
+        <div class="et"><span class="el">📝 Original Text</span><div class="ea"><button class="eab" onclick="pasteParaphrase()">Paste</button><button class="eab" onclick="clearParaphrase()">Clear</button></div></div>
+        <textarea id="parIn" placeholder="Paste any text to paraphrase..."></textarea>
+      </div>
+      <div class="ep">
+        <div class="et"><span class="el">🔄 Paraphrased Version</span><div class="ea"><button class="eab" onclick="copyParOut()">Copy</button></div></div>
+        <textarea id="parOut" class="outt par-out" readonly placeholder="Rewritten text will appear here..."></textarea>
+      </div>
+    </div>
+    <div class="par-stb" id="parStatus"></div>
+    <div class="hum-rw">
+      <button class="par-btn" id="parBtn" onclick="runParaphrase()">🔄 Paraphrase</button>
+      <button class="par-copy" id="parCopyBtn" onclick="copyParOut()">📋 Copy Result</button>
+    </div>
+  </div>
+</div>
+
+<!-- WORD COUNTER -->
+<div class="between-ad" id="adBetween3">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="wc-wrap">
+  <div class="wc-card">
+    <div class="wc-head">
+      <div class="wc-icon">📊</div>
+      <div><div class="hum-title">Word Counter</div><div class="hum-sub">Instant stats — words, characters, sentences, reading time</div></div>
+    </div>
+    <div class="wc-body">
+      <div class="wc-left">
+        <div class="et"><span class="el">📝 Your Text</span><div class="ea"><button class="eab" onclick="clearWC()">Clear</button></div></div>
+        <textarea id="wcInp" placeholder="Type or paste text to count words, characters and more..." oninput="updateWC()" style="flex:1;width:100%;padding:16px;background:var(--s);border:none;color:var(--ink);font-size:14px;font-family:'Inter',sans-serif;outline:none;resize:none;min-height:180px;line-height:1.75"></textarea>
+      </div>
+      <div class="wc-right">
+        <div class="wc-stat"><span class="wc-stat-label">Words</span><span class="wc-stat-val hi" id="wcWords">0</span></div>
+        <div class="wc-stat"><span class="wc-stat-label">Characters</span><span class="wc-stat-val" id="wcChars">0</span></div>
+        <div class="wc-stat"><span class="wc-stat-label">Characters (no spaces)</span><span class="wc-stat-val" id="wcCharsNo">0</span></div>
+        <div class="wc-stat"><span class="wc-stat-label">Sentences</span><span class="wc-stat-val" id="wcSents">0</span></div>
+        <div class="wc-stat"><span class="wc-stat-label">Paragraphs</span><span class="wc-stat-val" id="wcParas">0</span></div>
+        <div class="wc-stat"><span class="wc-stat-label">Read time</span><span class="wc-stat-val" id="wcRead">0s</span></div>
+      </div>
+    </div>
+    <div class="wc-bottom">
+      <span class="wc-pill" id="wcKeyword">Top word: —</span>
+      <span class="wc-pill" id="wcAvgWord">Avg word length: —</span>
+      <span class="wc-pill" id="wcSpeakTime">Speak time: —</span>
+    </div>
+  </div>
+</div>
+
+<!-- AD: after Word Counter -->
+<div class="between-ad" id="adBetween4">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+</div><!-- /main-col -->
+
+<!-- RIGHT SIDEBAR -->
+<div class="sidebar" id="sideRight">
+  <div class="sidebar-ad" id="adSideR1">
+    <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</div>
+
+</div><!-- /page-layout -->
+
 <section class="sec">
   <div class="stitle">Everything a grammar checker should be.</div>
   <div class="ssub">Built for students, professionals, bloggers and everyday writers worldwide.</div>
@@ -379,6 +545,8 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
     <div class="ft"><div class="fi">🔒</div><div class="fn">Private & Secure</div><div class="fd">Your text is never stored or shared. Processed and immediately discarded.</div></div>
     <div class="ft"><div class="fi">📊</div><div class="fn">Writing Score</div><div class="fd">See your overall, grammar, clarity and style scores after every single check.</div></div>
     <div class="ft"><div class="fi">🧬</div><div class="fn">AI Humanizer</div><div class="fd">Paste any AI-generated text and get a version that reads like a real human wrote it — in your chosen style.</div></div>
+    <div class="ft"><div class="fi">🔄</div><div class="fn">Paraphrase Tool</div><div class="fd">Rewrite any text in 7 different ways — standard, formal, simple, creative, shorter or expanded.</div></div>
+    <div class="ft"><div class="fi">📊</div><div class="fn">Word Counter</div><div class="fd">Instant word, character, sentence and paragraph counts. Plus reading time and top keyword stats.</div></div>
   </div>
 </section>
 
@@ -393,6 +561,8 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
     <div class="vsr"><div class="vc">Writing modes</div><div class="vc us">✅ 6 modes</div><div class="vc"><span class="pt">Premium only</span></div><div class="vc"><span class="cx">No</span></div></div>
     <div class="vsr"><div class="vc">Pushes upgrades</div><div class="vc us">✅ Never</div><div class="vc"><span class="cx">Constantly</span></div><div class="vc"><span class="cx">Yes</span></div></div>
     <div class="vsr"><div class="vc">AI Humanizer</div><div class="vc us">✅ Free</div><div class="vc"><span class="cx">No</span></div><div class="vc"><span class="cx">No</span></div></div>
+    <div class="vsr"><div class="vc">Paraphrase Tool</div><div class="vc us">✅ 7 modes</div><div class="vc"><span class="pt">Premium only</span></div><div class="vc"><span class="pt">Limited free</span></div></div>
+    <div class="vsr"><div class="vc">Word Counter</div><div class="vc us">✅ Free</div><div class="vc"><span class="pt">Basic</span></div><div class="vc"><span class="pt">Basic</span></div></div>
   </div>
 </section>
 
@@ -410,7 +580,7 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
     <div style="font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">💡 Quick Tip</div>
     <p style="font-size:14px;color:var(--ink2);line-height:1.7">Use <strong>Academic mode</strong> for essays and assignments. It removes contractions, uses precise vocabulary, and ensures formal register automatically.</p>
   </div>
-  <div style="width:300px;flex-shrink:0">
+  <div id="adRect" style="width:300px;flex-shrink:0;display:none">
     <ins class="adsbygoogle" style="display:block;width:300px;height:250px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="rectangle"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
@@ -425,7 +595,7 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   </div>
 </div>
 
-<div class="adb">
+<div id="adBottom" style="max-width:740px;margin:20px auto 0;padding:0 20px;display:none">
   <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-1431591420159993" data-ad-slot="auto" data-ad-format="horizontal"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
@@ -434,7 +604,7 @@ footer{background:var(--ink);margin-top:48px;padding:40px 20px 24px}
   <div class="fi2">
     <div class="ftop">
       <div><div class="fbn">Grammar<b>Banana</b></div><div class="fbd">Free AI grammar checker for everyone. No tracking ads. No signup ever. Built for writers worldwide.</div></div>
-      <div><div class="fct">Tools</div><a class="fl" href="/">Grammar Checker</a><a class="fl" href="/" title="Coming soon">AI Humanizer ✨</a><a class="fl" href="/" style="opacity:.5;cursor:default" title="Coming soon">Paraphrase Tool</a><a class="fl" href="/" style="opacity:.5;cursor:default" title="Coming soon">Word Counter</a></div>
+      <div><div class="fct">Tools</div><a class="fl" href="/">Grammar Checker</a><a class="fl" href="/">AI Humanizer ✨</a><a class="fl" href="/">Paraphrase Tool ✨</a><a class="fl" href="/">Word Counter ✨</a></div>
       <div><div class="fct">Company</div><a class="fl" href="mailto:ads@grammarbanana.vercel.app">Advertise</a><a class="fl" href="#">Privacy Policy</a><a class="fl" href="#">Terms</a><a class="fl" href="#">Contact</a></div>
     </div>
     <div class="fbot">
@@ -580,6 +750,72 @@ function tFaq(el){
   document.querySelectorAll('.fqi').forEach(x=>x.classList.remove('open'));
   if(!was)item.classList.add('open');
 }
+// ===== PARAPHRASE TOOL =====
+let parMode='standard';
+function selParMode(el,m){parMode=m;document.querySelectorAll('.par-chip').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');}
+function pasteParaphrase(){try{navigator.clipboard.readText().then(t=>{document.getElementById('parIn').value=t;});}catch{document.getElementById('parIn').focus();}}
+function clearParaphrase(){document.getElementById('parIn').value='';document.getElementById('parOut').value='';document.getElementById('parCopyBtn').classList.remove('show');setParStatus('');}
+function copyParOut(){const t=document.getElementById('parOut').value;if(!t)return;navigator.clipboard.writeText(t).then(()=>{const b=document.getElementById('parCopyBtn');b.innerHTML='✅ Copied!';setTimeout(()=>b.innerHTML='📋 Copy Result',2000);});}
+function setParStatus(type,msg){const el=document.getElementById('parStatus');if(!type){el.className='par-stb';return;}el.className='par-stb show '+type;el.innerHTML=type==='ld'?`<div class="spin"></div><span>${msg}</span>`:`<span>${msg}</span>`;}
+const parModes={
+  standard:'Rewrite the text using different words and sentence structures while keeping the exact same meaning. Vary vocabulary naturally.',
+  fluency:'Rewrite for maximum fluency and natural flow. Fix any awkward phrasing. The result should read effortlessly.',
+  formal:'Rewrite in a formal, professional tone. Use sophisticated vocabulary. Remove casual language and contractions.',
+  simple:'Rewrite using simpler, clearer words. Short sentences. Easy to understand for anyone.',
+  creative:'Rewrite creatively with vivid language and varied structure. Make it engaging and interesting to read.',
+  shorten:'Rewrite as a concise summary — cut at least 40% of the length while keeping all key information.',
+  expand:'Expand the text with more detail, examples and explanation. Make it richer and more comprehensive.'
+};
+async function runParaphrase(){
+  const inp=document.getElementById('parIn').value.trim();
+  if(!inp){setParStatus('er','⚠️ Paste some text first!');return;}
+  const btn=document.getElementById('parBtn');
+  btn.disabled=true;btn.innerHTML='<div class="spin" style="border-top-color:#fff"></div> Paraphrasing...';
+  setParStatus('ld','Rewriting your text...');
+  document.getElementById('parCopyBtn').classList.remove('show');
+  const prompt=`You are an expert writer and editor. Task: ${parModes[parMode]}
+Output ONLY the rewritten text. No preamble, no explanation, no quotes.
+Text to paraphrase:
+"""
+${inp}
+"""`;
+  try{
+    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
+    const data=await res.json();
+    if(data.error)throw new Error(data.error);
+    document.getElementById('parOut').value=(data.result||'').trim();
+    document.getElementById('parCopyBtn').classList.add('show');
+    setParStatus('ok','✅ Done! Your text has been paraphrased.');
+  }catch(e){setParStatus('er','❌ '+e.message);}
+  btn.disabled=false;btn.innerHTML='🔄 Paraphrase';
+}
+// ===== WORD COUNTER =====
+function updateWC(){
+  const t=document.getElementById('wcInp').value;
+  const words=t.trim()?t.trim().split(/\s+/):[]; const wc=words.length;
+  const chars=t.length; const charsNo=t.replace(/\s/g,'').length;
+  const sents=t.trim()?(t.match(/[.!?]+/g)||[]).length:0;
+  const paras=t.trim()?(t.split(/\n\s*\n/).filter(p=>p.trim()).length||1):0;
+  const readSec=Math.ceil(wc/3.3); const speakSec=Math.ceil(wc/2.3);
+  document.getElementById('wcWords').textContent=wc;
+  document.getElementById('wcChars').textContent=chars;
+  document.getElementById('wcCharsNo').textContent=charsNo;
+  document.getElementById('wcSents').textContent=sents;
+  document.getElementById('wcParas').textContent=paras;
+  document.getElementById('wcRead').textContent=wc<10?wc+'s':readSec>=60?Math.floor(readSec/60)+'m '+readSec%60+'s':readSec+'s';
+  document.getElementById('wcSpeakTime').textContent='Speak: '+(speakSec>=60?Math.floor(speakSec/60)+'m '+speakSec%60+'s':speakSec+'s');
+  if(words.length){
+    const freq={};words.forEach(w=>{const k=w.toLowerCase().replace(/[^a-z]/g,'');if(k.length>3)freq[k]=(freq[k]||0)+1;});
+    const top=Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById('wcKeyword').textContent=top?`Top word: "${top[0]}" (${top[1]}x)`:'Top word: —';
+    const avgLen=(charsNo/wc).toFixed(1);
+    document.getElementById('wcAvgWord').textContent=`Avg word: ${avgLen} chars`;
+  } else {
+    document.getElementById('wcKeyword').textContent='Top word: —';
+    document.getElementById('wcAvgWord').textContent='Avg word length: —';
+  }
+}
+function clearWC(){document.getElementById('wcInp').value='';updateWC();}
 // ===== HUMANIZER =====
 let humStyle='natural', humIntent='general';
 function selHStyle(el,s){humStyle=s;document.querySelectorAll('.sty').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');}
@@ -645,6 +881,28 @@ ${inp}
   btn.disabled=false;btn.innerHTML='🧬 Humanize Text';
 }
 updateStats();
-updateIntLabel();</script>
+updateIntLabel();
+// ===== AD VISIBILITY — show only when AdSense fills the slot =====
+(function(){
+  function checkAds(){
+    document.querySelectorAll('ins.adsbygoogle').forEach(ins=>{
+      const filled=ins.getAttribute('data-ad-status')==='filled'||ins.offsetHeight>10;
+      if(filled){
+        const p=ins.closest('[id^="ad"],[id^="side"]');
+        if(p)p.style.display='block';
+        // sidebar-ad inner wrapper
+        const sa=ins.closest('.sidebar-ad');
+        if(sa)sa.style.display='block';
+      }
+    });
+  }
+  setTimeout(checkAds,2000);
+  setTimeout(checkAds,5000);
+  setTimeout(checkAds,10000);
+  if(window.MutationObserver){
+    const obs=new MutationObserver(checkAds);
+    document.querySelectorAll('ins.adsbygoogle').forEach(ins=>obs.observe(ins,{attributes:true,attributeFilter:['data-ad-status']}));
+  }
+})();</script>
 </body>
 </html>
